@@ -3,7 +3,7 @@
 Para esta actividad creamos un nuevo repositorio en GitHub exclusivamente para el Taller 01, con el fin de evitar alterar la versión original del proyecto U-Market desarrollado en Proyecto Integrador 1.
 
 - **Repositorio creado:**  
-  [https://github.com/<tu-usuario>/taller01-umarket](https://github.com/<tu-usuario>/taller01-umarket) *(Ejemplo, reemplazar con el tuyo)*
+  [https://github.com/<tu-usuario>/taller01-umarket](git@github.com:Arangathor/TitanEdge-Corp.git).
 
 - **Objetivo del repositorio:**  
   Documentar e implementar los patrones de diseño y mejoras en arquitectura requeridas para el Taller 01, conservando el diseño original del sistema pero aplicando refactorizaciones y patrones.

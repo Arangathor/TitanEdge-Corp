@@ -1,0 +1,41 @@
+{% extends "ComercioEafitApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+<!-- Bloque de Tema actual -->
+<section class="page-section clearfix">
+    <div class="container">
+      <div class="text-center p-4" style="background-color: #013220; color: white; border-radius: 15px; box-shadow: 0 4px 10px rgba(0,0,0,0.4); margin-bottom: 3rem;">
+        <h2 class="section-heading mb-4">
+          <span class="section-heading-upper" style="color: #90ee90;">CONFIGURACIÓN VISUAL</span><br>
+          <span class="section-heading-lower" style="font-size: 1.8em;">TEMA ACTUAL: {{ tema|upper }}</span>
+        </h2>
+      </div>
+    </div>
+</section>
+
+<!-- Servicios -->
+{% for servicio in servicios %}
+<section class="page-section clearfix">
+    <div class="container">
+        <div class="intro">
+            <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{ servicio.imagen.url }}" alt="" style="width: 60%;">
+            <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">
+                    <span class="section-heading-upper">¡ {{ servicio.titulo }} !</span>
+                    <span class="section-heading-lower">{{ servicio.contenido }}</span><br>
+                    {% if servicio.categoria %}
+                    <span style="color: gray; font-size: 0.9em;">Categoría: {{ servicio.categoria.nombre }}</span>
+                    {% else %}
+                    <span style="color: gray; font-size: 0.9em;">Sin categoría</span>
+                    {% endif %}
+                </h2>
+            </div>
+        </div>
+    </div>
+</section>
+{% endfor %}
+
+{% endblock %}

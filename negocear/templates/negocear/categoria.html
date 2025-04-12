@@ -1,0 +1,55 @@
+{% extends "ComercioEafitApp/base.html" %}
+
+{% load static %}
+
+{% block content %}
+
+    {% for post in posts %}
+
+    <!-- Heading -->
+    <section class="page-section clearfix">
+        <div class="container">
+            <div class="intro">
+                <img class="intro-img img-fluid mb-3 mb-lg-0 rounded" src="{{post.imagen.url}}" alt="" style="width: 60%;">
+                <div class="intro-text left-0 text-center bg-faded p-5 rounded">
+                    <h2 class="section-heading mb-4" >
+                        <span class="section-heading-upper">¡ {{post.titulo}} !</span>
+                        <span class="section-heading-lower">{{post.contenido}}</span>
+                        <p></p>
+                        <p></p>
+                    </h2>
+                    <div style="text-align: left;">
+                        
+                        Autor: {{post.autor}}
+                        <p></p>
+                        <span class="section-heading-upper">Precio: ${{post.precio}}</span>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    {% endfor %}
+
+    <section>
+
+        <div style="width: 80%; background-color: black; margin: auto; text-align: center; color: beige;">
+            
+            Categorias: 
+
+            {% for post in posts %}
+
+                {% for categoria in post.categorias.all %}
+
+                    {{categoria.nombre}} /
+                
+                {% endfor %}
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+{% endblock %}
